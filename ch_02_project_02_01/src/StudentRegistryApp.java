@@ -24,12 +24,12 @@ public class StudentRegistryApp {
 		
 		
 		String fullName = fName+ " " +lName;
-		String tempPwd = lName+ "*" +year;
+		String tempPwd = fName+ "*" +year;
 		//Confirmation Message
-        System.out.println("*------------------------------------------------*");
-        System.out.println("|----------------Congratulations!----------------|");
-        System.out.println("|--------You have successfully registered!-------|");
-        System.out.println("*------------------------------------------------*");
+        System.out.println("*--------------------------------------------------------*");
+        System.out.println("|------------------- Congratulations! -------------------|");
+        System.out.println("|----------- You have successfully registered! ----------|");
+        System.out.println("*--------------------------------------------------------*");
         System.out.println();
         
         
@@ -37,12 +37,17 @@ public class StudentRegistryApp {
 		
 		
         System.out.println("Welcome " +fullName+ "!");
+        System.out.println("Your registration is complete!");
         System.out.println("Your temporary password is " +tempPwd);
         
         
-        
+        sc.close();
 		//Goodbye Message
         System.out.println("Have a wonderful day and enjoy the learning experience!");
+        System.out.println("");
+        System.out.println("*--------------------------------------------------------*");
+        System.out.println("|----------- Closing Student Registration App -----------|");
+        System.out.println("*--------------------------------------------------------*");
 	}
 
 }
