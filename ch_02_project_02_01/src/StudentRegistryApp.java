@@ -6,6 +6,7 @@ public class StudentRegistryApp {
 		// TODO Create Welcome Message
         System.out.println("*------------------------------------------------*");
         System.out.println("|---------Welcome to University of Java!---------|");
+        System.out.println("|-----------Student Registration Page------------|");
         System.out.println("*------------------------------------------------*");
         
         
@@ -19,10 +20,11 @@ public class StudentRegistryApp {
 		System.out.println("Please Enter Surname: ");
 		String lName = sc.next();
 		System.out.println("Please Enter Year of Birth: ");
-		String year = sc.next();
+		int year = sc.nextInt();
 		
 		
 		String fullName = fName+ " " +lName;
+		String tempPwd = lName+ "*" +year;
 		//Confirmation Message
         System.out.println("*------------------------------------------------*");
         System.out.println("|----------------Congratulations!----------------|");
@@ -35,7 +37,7 @@ public class StudentRegistryApp {
 		
 		
         System.out.println("Welcome " +fullName+ "!");
-        System.out.println("Your temporary password is " +lName+ "*" +year);
+        System.out.println("Your temporary password is " +tempPwd);
         
         
         
