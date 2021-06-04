@@ -23,8 +23,8 @@ public class TravelTimeCalcApp {
 					System.out.println("Enter miles per hour:");
 					double mph = sc.nextDouble();
 					
-					double hours = (double) Math.round(miles/mph);
-					double minutes = (double) (miles % mph);
+					double hours = miles/mph;
+					double minutes = (miles % mph *60 )/60;
 					
 					System.out.println("Estimated Travel Time");
 					System.out.println("---------------------");
