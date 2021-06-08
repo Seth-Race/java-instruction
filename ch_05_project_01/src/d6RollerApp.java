@@ -69,28 +69,7 @@ public class d6RollerApp {
 	private static int rollDie() {
 	
 	return (int) (Math.random()*6+1);
-	
-//	System.out.println("Die 1:   " +d1);
-//	System.out.println("Die 2:   " +d2);
-//	System.out.println("Total:   " +(d1+d2));
-//	if (d1 == d2) {
-//		if (d1 == 1) {
-//			System.out.println("*~~~~~~~~~~~~~*");
-//			System.out.println("| Snake eyes! |");
-//			System.out.println("*~~~~~~~~~~~~~*");
-//		}
-//		else if (d1 == 6) {
-//			System.out.println("*~~~~~~~~~~~~~~*");
-//			System.out.println("|   Boxcars!   |");
-//			System.out.println("*~~~~~~~~~~~~~~*");
-//		}
-//		else {
-//			System.out.println("*~~~~~~~~~~~~~~*");
-//			System.out.println("|   Doubles!   |");
-//			System.out.println("*~~~~~~~~~~~~~~*");
-//			}
-//		}
-	}
+		}
 	
 }
 
