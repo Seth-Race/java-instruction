@@ -11,20 +11,29 @@ public class ProductManagerDemoApp {
 		p1.setCode("Java");
 		p1.setDescription("Murach's Java Programming");
 		p1.setPrice(57.50);
-		printProduct(p1);
 		
 		//fully loaded constructor
 		Product p2 = new Product("andr", "Murach's Android Programming", 59.50);
-		printProduct(p2);
+		
+		
+		Product p3 = new Product("andr", "Murach's Android Programming", 59.50);
+		Product p4 = p1;
+
+//		printProduct(p1);
+//		printProduct(p2);
+//		printProduct(p3);
+//		printProduct(p4);
+		
+
 		
 		
 		
 		
 		
-		
-		
-		
-		
+		System.out.println(p1);
+		System.out.println(p2);
+		System.out.println(p3);
+		System.out.println(p4);
 		
 		
 		
@@ -44,4 +53,5 @@ public class ProductManagerDemoApp {
 		
 	}
 
+	
 }
