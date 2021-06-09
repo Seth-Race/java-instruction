@@ -49,9 +49,28 @@ public class Product {
 		this.price = price;
 	}
 
+	
+	
+	
 	@Override
 	public String toString() {
 		return description;
 	}
 
+	
+	
+	@Override
+	public boolean equals(Object obj) {
+		boolean sameData = false;
+		if (obj instanceof Product) {
+			Product p = (Product)obj;
+		if (p.getCode().equals(code)) {
+			sameData = true;
+			}
+		}
+		
+		return sameData;
+	}
+	
+	
 }
