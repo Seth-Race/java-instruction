@@ -6,10 +6,10 @@ public class BmdbConsoleApp {
 		System.out.println();
 		
 		int id = Console.getInt("Please enter Movie ID:   ");
-		String title = Console.getString("Please enter title:   ");
+		String title = Console.getLine("Please enter title:   ");
 		int year = Console.getInt("Please enter year:   ");
 		String rating = Console.getString("Please enter rating:   ");
-		String director = Console.getString("Please enter Director:   ");
+		String director = Console.getLine("Please enter Director:   ");
 	
 		
 		
@@ -20,13 +20,14 @@ public class BmdbConsoleApp {
 		
 		
 		movieSummary(m1);
+		System.out.println();
+		System.out.println(m1);
 		
 		
 		
 		
 		
-		
-		
+		System.out.println();
 		System.out.println("Thanks for choosing the Console App of the stars!");
 	}
 
@@ -41,6 +42,7 @@ public class BmdbConsoleApp {
 		System.out.println("Year:     " +m.getYear());
 		System.out.println("Rating:   " +m.getRating());
 		System.out.println("Director: " +m.getDirector());
+		
 	}
 	
 	

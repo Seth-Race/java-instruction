@@ -18,8 +18,13 @@ public class Movie {
 		this.director = director;
 	}
 	
-	
-	
+	public Movie() {
+		super();
+	}
+
+
+
+
 	public int getId() {
 		return id;
 	}
@@ -52,8 +57,7 @@ public class Movie {
 	}
 	@Override
 	public String toString() {
-		return "BmdbMovie [id=" + id + ", title=" + title + ", year=" + year + ", rating=" + rating + ", director="
-				+ director + "]";
+		return title + " ("+year+"), Rated " +rating+", Directed by " +director;
 	}
 	
 	
