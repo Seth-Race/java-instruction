@@ -19,6 +19,36 @@ public class Console {
         return s;
     }
 
+    public static String getString(String prompt, boolean isRequired) {
+        String s = "";
+        boolean isValid = false;
+        while (!isValid) {
+            System.out.print(prompt);
+            s = sc.nextLine();
+            if (isRequired && s.equals("")) {
+                System.out.println("Error! This entry is required. Try again.");
+            } else {
+                isValid = true;
+            }
+        }
+        return s;
+    }
+    public static String getString(String prompt, String s1, String s2) {
+        String s = "";
+        boolean isValid = false;
+        while (!isValid) {
+            s = getString(prompt, true);
+            if (!s.equalsIgnoreCase(s1) && !s.equalsIgnoreCase(s2)) {
+                System.out.println("Error! Entry must be '" + s1 + "' or '" +
+                        s2 + "'. Try again.");
+            } else {
+                isValid = true;
+            }
+        }
+        return s;
+    }
+    
+    
     public static int getInt(String prompt) {
         int i = 0;
         boolean isValid = false;
