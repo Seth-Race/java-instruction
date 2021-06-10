@@ -14,16 +14,15 @@ public class PersonManagerApp {
 			String fName = Console.getString("First Name:        ", true);
 			String lName = Console.getString("Enter Last Name:   ", true);
 			String ssn = Console.getString("SSN (XXX-XX-XXXX):   ", true);
-			
-			
-			
-			
+
 			Employee e1 = new Employee(fName, lName, ssn);
 			System.out.println("You have entered a new Employee:");
 			System.out.println();
 			System.out.println(e1);
 				}
-		else if (core.equalsIgnoreCase("c")) {
+		
+		
+		else {
 			String fName = Console.getString("First Name:              ", true);
 			String lName = Console.getString("Enter Last Name:         ", true);
 			String custNum = Console.getString("Enter Customer Number:   ", true);
