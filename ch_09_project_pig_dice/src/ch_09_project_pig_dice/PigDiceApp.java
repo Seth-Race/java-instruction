@@ -6,8 +6,9 @@ public class PigDiceApp {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the Pig Dice app!");
-		// Have to create while loop, for loop (for lastRoll != 0)
+		System.out.println();
 		String choice = Console.getString("Shall we play?     ", "y", "n");
+		System.out.println();
 		
 		while (choice.equalsIgnoreCase("y")) {
 
@@ -76,7 +77,7 @@ public class PigDiceApp {
 
 		}
 		System.out.println();
-		System.out.println("Thanks for playing, goodbye!");
+		System.out.println("Thanks for playing Pig Dice, goodbye!");
 	}
 
 	private static int rollDie() {
