@@ -48,16 +48,29 @@ public class PigDiceApp {
 				
 			
 			}
+			if (rolls > 9 || score > 9) {
+				System.out.println();
+				System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
+				System.out.println("|       **SCORECARD**        |");
+				System.out.println("|   We rolled " + rolls + " times!       |");
+				System.out.println("|     Our score is " + score + "!       |");
+				System.out.println("|  Highest roll was " +highRoll+ "!       |");
+				System.out.println("|   Average roll was " +avgRoll+ "!      |");
+				System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
+				
+				
+			}
+			else {
 			System.out.println();
 			System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
 			System.out.println("|       **SCORECARD**       |");
 			System.out.println("|   We rolled " + rolls + " times!      |");
 			System.out.println("|     Our score is " + score + "!       |");
-			System.out.println("|  Highest roll was " +highRoll+ "       |");
-			System.out.println("|   Average roll was " +avgRoll+ "      |");
+			System.out.println("|  Highest roll was " +highRoll+ "!      |");
+			System.out.println("|   Average roll was " +avgRoll+ "!     |");
 			System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
 			
-			
+			}
 			System.out.println();
 			choice = Console.getString("Play another round?     ", "y", "n");
 
