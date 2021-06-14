@@ -26,26 +26,26 @@ public class PigDiceApp {
 			
 			while (attempt < maxAttempt) {
 				die = rollDie();
-				System.out.println("We rolled a " +die);
+				//System.out.println("We rolled a " +die);
 				rolls ++;
 				attempt ++;
-				score = score+die;
+				score += die;
 				avgRoll = (score/rolls);
 			if (highRoll < die) {
 				highRoll = die;
 			}
 			if (die == 1) {
-				System.out.println("*--------------------*");
-				System.out.println("|    Aww, shucks!    |");
-				System.out.println("|    What a loser!   |");
-				System.out.println("*--------------------*");
+//				System.out.println("*--------------------*");
+//				System.out.println("|    Aww, shucks!    |");
+//				System.out.println("|    What a loser!   |");
+//				System.out.println("*--------------------*");
 				break;
 			}
 			if (attempt == maxAttempt) {
-				System.out.println("*-------------------------------*");
-				System.out.println("|    You made it all the way!   |");
-				System.out.println("|  Good job not being a loser!  |");
-				System.out.println("*-------------------------------*");
+//				System.out.println("*-------------------------------*");
+//				System.out.println("|    You made it all the way!   |");
+//				System.out.println("|  Good job not being a loser!  |");
+//				System.out.println("*-------------------------------*");
 
 					break;
 				}
