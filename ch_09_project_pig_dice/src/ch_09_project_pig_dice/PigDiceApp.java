@@ -1,3 +1,6 @@
+//Weird version.
+//Will remake soon.
+
 package ch_09_project_pig_dice;
 
 import com.util.Console;
@@ -19,10 +22,10 @@ public class PigDiceApp {
 			int maxAttempt = Console.getInt("How many attempts?     ");
 			int attempt = 0;
 			int avgRoll = 1;
-			
+			int die = 0;
 			
 			while (attempt < maxAttempt) {
-				int die = rollDie();
+				die = rollDie();
 				System.out.println("We rolled a " +die);
 				rolls ++;
 				attempt ++;
