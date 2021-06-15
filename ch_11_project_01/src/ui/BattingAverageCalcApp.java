@@ -24,7 +24,7 @@ public class BattingAverageCalcApp {
             int[] results = new int[atBats];    
             for (int i = 0; i < atBats; i++) {
                 int atBat = i + 1;
-                results[i] = Console.getInt("Result for at-bat " +atBat+ ": ", -1, 5);
+                results[i] = Console.getInt("Result for at-bat " +atBat+ ":     ", 0, 4);
             }
             System.out.println();
 
@@ -40,16 +40,16 @@ public class BattingAverageCalcApp {
 
 
             // calculating averages
-            // NOTE: cast one operand to double to avoid integer result (Something I didn't know before)
+            // NOTE: cast one operand to double to avoid integer result (This MUST be placed, or it will result in 1, 2, 3 and so on)
             double battingAverage = successfulAtBats / (double) atBats;
             double sluggingPercent = totalBases / (double) atBats;
 
             // format results
-            NumberFormat number = NumberFormat.getNumberInstance();
-            number.setMinimumFractionDigits(3);
-            number.setMaximumFractionDigits(3);
-            System.out.println("Batting average: " +number.format(battingAverage));
-            System.out.println("Slugging percent: " +number.format(sluggingPercent));
+            NumberFormat nf = NumberFormat.getNumberInstance();
+            nf.setMinimumFractionDigits(3);
+            nf.setMaximumFractionDigits(3);
+            System.out.println("Batting average: " +nf.format(battingAverage));
+            System.out.println("Slugging percent: " +nf.format(sluggingPercent));
             System.out.println();
 
 
@@ -64,6 +64,7 @@ public class BattingAverageCalcApp {
 
 
 // Putting this old code here for future reference.
+//This is hilariously horrid and well overcomplicated.
 
 
 //System.out.println("Welcome to the batting average app!");

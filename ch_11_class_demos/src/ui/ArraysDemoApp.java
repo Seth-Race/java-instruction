@@ -34,7 +34,7 @@ public class ArraysDemoApp {
 		//this method cannot pull index (i in last example)
 		//p and name show as variables within FOR loop. REMEMBER THAT.
 		
-		System.out.println("Enchanced for loop...");
+		System.out.println("Enhanced for loop...");
 		for (double p: prices) {
 			System.out.println(p);
 		}
