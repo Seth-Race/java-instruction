@@ -108,9 +108,10 @@ public class WizardGameApp {
 			System.out.println();
 			System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
 			System.out.println("|Congratulations! You defeated the troll!|");
-			System.out.println("|        Highest Damage:  " +highDmg+ "             |");
-			System.out.println("| You hit the Troll with " +hits+ " Fireballs!     |");
 			System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
+			System.out.println("COMBAT STATS");
+			System.out.println("Highest Damage in a single hit: " +highDmg);
+			System.out.println("You hit the Troll " +hits+ " times.");
 			break;
 					}
 			if (trollHP < 0) {
@@ -118,9 +119,10 @@ public class WizardGameApp {
 			System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
 			System.out.println("|            OVERKILL!!!!                |");
 			System.out.println("|Congratulations! You defeated the troll!|");
-			System.out.println("|        Highest Damage:  " +highDmg+ "             |");
-			System.out.println("|  You hit the Troll with " +hits+ " Fireballs!  |");
 			System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
+			System.out.println("COMBAT STATS");
+			System.out.println("Highest Damage in a single hit: " +highDmg);
+			System.out.println("You hit the Troll " +hits+ " times.");
 			break;
 			}
 			}
