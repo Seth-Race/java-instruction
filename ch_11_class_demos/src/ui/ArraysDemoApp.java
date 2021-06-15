@@ -63,12 +63,15 @@ public class ArraysDemoApp {
 		// p. 362-363 Arrays Class
 		//is 2.35 in array of prices?
 		// what posistion if so?
+		System.out.println("Binary searching Array");
 		System.out.println(Arrays.binarySearch(prices, 2.35));
 		
 		//sorting
 		for (String n: names) {
 			System.out.println(n);
 		}
+		
+		//MUST implement Comparable on the class to be able to sort.
 		System.out.println("Sort the names");
 		Arrays.sort(names); //didn't work
 		for (String n: names) {
