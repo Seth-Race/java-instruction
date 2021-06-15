@@ -70,12 +70,12 @@ public class Console {
         boolean isValid = false;
         while (!isValid) {
             i = getInt(prompt);
-            if (i <= min) {
+            if (i < min) {
                 System.out.println(
-                        "Error! Number must be greater than " + min + ".");
-            } else if (i >= max) {
+                        "Error! Number must be greater than, or equal to " + min + ".");
+            } else if (i > max) {
                 System.out.println(
-                        "Error! Number must be less than " + max + ".");
+                        "Error! Number must be less than, or equal to " + max + ".");
             } else {
                 isValid = true;
             }
