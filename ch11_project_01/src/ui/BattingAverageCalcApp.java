@@ -38,13 +38,12 @@ public class BattingAverageCalcApp {
 				}
 	//	batAvg (This has to be the amount of atBat that's got at least 1 base)/atBat
 	//	This is not -actually- getting the average. Ask Sean.
-		BigDecimal batAvg = hit.divide(atBat);
-		batAvg = batAvg.setScale(3, RoundingMode.HALF_UP);
+		BigDecimal batAvg = hit.divide(atBat,3, RoundingMode.HALF_UP);
 		System.out.println("Batting Average:   " +batAvg);
 		
 	//This is giving 3 places, but weirdly. Check with Sean. REMOVE WHEN FIXED.
-		BigDecimal slugAvg = bases.divide(atBat);		
-		slugAvg = slugAvg.setScale(3, RoundingMode.HALF_UP);
+		BigDecimal slugAvg = bases.divide(atBat,3, RoundingMode.HALF_UP);		
+//		slugAvg = slugAvg.setScale(3, RoundingMode.HALF_UP);
 		System.out.println("Slugging Average:   " +slugAvg);
 		
 		
