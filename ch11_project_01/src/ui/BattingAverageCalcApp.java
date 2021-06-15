@@ -15,7 +15,8 @@ public class BattingAverageCalcApp {
         while (choice.equalsIgnoreCase("y")) {
         
 //        double slugAvg = 0.0;
-        double batAvg = 0.0;
+        BigDecimal hit = new BigDecimal("0");
+        int hits = hit.intValue();
         BigDecimal bases = new BigDecimal("0");
         int base = bases.intValue();
         
@@ -30,11 +31,16 @@ public class BattingAverageCalcApp {
 		bat[i] = Console.getInt("0 = out, 1 = single, 2 = double, 3 = triple, 4 = home run   ", -1, 5);
 		base += bat[i];
 		bases = BigDecimal.valueOf(base);
+		if (bat[i] < 0) {
+			hits += bat[i];
+			hit = BigDecimal.valueOf(hits);
+		}
 				}
 	//	batAvg (This has to be the amount of atBat that's got at least 1 base)/atBat
-	//	Still at a loss on this one.
-		
-		
+	//	This is not -actually- getting the average. Ask Sean.
+		BigDecimal batAvg = hit.divide(atBat);
+		batAvg = batAvg.setScale(3, RoundingMode.HALF_UP);
+		System.out.println("Batting Average:   " +batAvg);
 		
 	//This is giving 3 places, but weirdly. Check with Sean. REMOVE WHEN FIXED.
 		BigDecimal slugAvg = bases.divide(atBat);		
