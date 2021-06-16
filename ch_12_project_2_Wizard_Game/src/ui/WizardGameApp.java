@@ -27,44 +27,18 @@ public class WizardGameApp {
 			String command = Console.getLine("Please enter command:   ");
 			System.out.println();
 			if (command.equalsIgnoreCase("inv")) {
-				System.out.println("INVENTORY");
-
-				for (int i = 0; i < inventory.size(); i++) {
-
-					System.out.println(i + 1 + ".   " + inventory.get(i));
-				}
+				inv(inventory);
 			}
 
 			else if (command.equalsIgnoreCase("grab")) {
-				if (inventory.size() <= 3) {
-					String name = Console.getLine("Enter item name:   ");
-					inventory.add(name);
-					System.out.println("You picked up " + name);
-				} else {
-					System.out.println("Your hands are full! Try dropping something!");
-				}
+				grab(inventory);
 			}
 
 			else if (command.equalsIgnoreCase("drop")) {
-				int itemNmbr = Console.getInt("Which item? (by inventory number)   ");
-				if (itemNmbr >= 0 && itemNmbr <= inventory.size()) {
-					inventory.remove(itemNmbr);
-					System.out.println("You dropped it!");
-				} else {
-					System.out.println("Invalid entry. Returning to main.");
-					displayCommands();
-				}
+				dropItem(inventory);
 				
 			} else if (command.equalsIgnoreCase("enchant")) {
-				inventory.set(((Console.getInt("Which item number?   ") - 1)), (Console.getLine("Give it a name!   ")));
-				System.out.println();
-				System.out.println("INVENTORY");
-				System.out.println();
-
-				for (int i = 0; i < inventory.size(); i++) {
-
-					System.out.println(i + 1 + ".   " + inventory.get(i));
-				}
+				enchantItem(inventory);
 			} else if (command.equalsIgnoreCase("help")) {
 				displayCommands();
 			} else if (command.equalsIgnoreCase("fight")) {
@@ -83,6 +57,48 @@ public class WizardGameApp {
 		System.out.println("*------------------------------------------------------*");
 		System.out.println("| Thanks for playing, returning you to your own world. |");
 		System.out.println("*------------------------------------------------------*");
+	}
+
+	private static void enchantItem(List<String> inventory) {
+		inventory.set(((Console.getInt("Which item number?   ") - 1)), (Console.getLine("Give it a name!   ")));
+		System.out.println();
+		System.out.println("INVENTORY");
+		System.out.println();
+
+		for (int i = 0; i < inventory.size(); i++) {
+
+			System.out.println(i + 1 + ".   " + inventory.get(i));
+		}
+	}
+
+	private static void dropItem(List<String> inventory) {
+		int itemNmbr = Console.getInt("Which item? (by inventory number)   ")-1;
+		if (itemNmbr >= 0 && itemNmbr <= inventory.size()) {
+			inventory.remove(itemNmbr);
+			System.out.println("You dropped it!");
+		} else {
+			System.out.println("Invalid entry. Returning to main.");
+			displayCommands();
+		}
+	}
+
+	private static void grab(List<String> inventory) {
+		if (inventory.size() <= 3) {
+			String name = Console.getLine("Enter item name:   ");
+			inventory.add(name);
+			System.out.println("You picked up " + name);
+		} else {
+			System.out.println("Your hands are full! Try dropping something!");
+		}
+	}
+
+	private static void inv(List<String> inventory) {
+		System.out.println("INVENTORY");
+
+		for (int i = 0; i < inventory.size(); i++) {
+
+			System.out.println(i + 1 + ".   " + inventory.get(i));
+		}
 	}
 
 	private static void displayCommands() {
