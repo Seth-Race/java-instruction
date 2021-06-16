@@ -60,6 +60,8 @@ public class WizardGameApp {
 				fight();
 			} else if (command.equalsIgnoreCase("exit") || command.equalsIgnoreCase("quit")) {
 				break;
+			} else {
+				System.out.println("Invalid command. Please try again, or type HELP for a list of commands!");
 			}
 
 			System.out.println();
