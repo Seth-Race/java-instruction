@@ -8,7 +8,9 @@ import com.util.Console;
 public class WizardGameApp {
 
 	public static void main(String[] args) {
-		System.out.println("Welcome to the Wizarding World Game!");
+		System.out.println("*--------------------------------------*");
+		System.out.println("| Welcome to the Wizarding World Game! |");
+		System.out.println("*--------------------------------------*");
 		System.out.println();
 		displayCommands();
 		System.out.println();
@@ -43,6 +45,7 @@ public class WizardGameApp {
 
 			else if (command.equalsIgnoreCase("drop")) {
 				inventory.remove((Console.getInt("Which item? (by inventory number)   ") - 1));
+				System.out.println("You dropped it!");
 			} else if (command.equalsIgnoreCase("enchant")) {
 				inventory.set(((Console.getInt("Which item number?   ") - 1)), (Console.getLine("Give it a name!   ")));
 			} else if (command.equalsIgnoreCase("help")) {
@@ -58,7 +61,9 @@ public class WizardGameApp {
 		}
 
 		System.out.println();
-		System.out.println("Thanks for playing, returning you to your own world.");
+		System.out.println("*------------------------------------------------------*");
+		System.out.println("| Thanks for playing, returning you to your own world. |");
+		System.out.println("*------------------------------------------------------*");
 	}
 	
 
@@ -82,9 +87,9 @@ public class WizardGameApp {
 		String fightCommand = "yes";
 
 		System.out.println();
-		System.out.println("*~*~*~*~*~*~*~*~*~*~*");
-		System.out.println("|A FIGHT BREAKS OUT!|");
-		System.out.println("*~*~*~*~*~*~*~*~*~*~*");
+		System.out.println("*~*~*~*~*~*~*~*~*~*~*~*");
+		System.out.println("| A FIGHT BREAKS OUT! |");
+		System.out.println("*~*~*~*~*~*~*~*~*~*~*~*");
 		System.out.println();
 		
 		System.out.println("You hear grunting and snarling from the nearby trees!");
@@ -106,9 +111,9 @@ public class WizardGameApp {
 			System.out.println("Troll's HP stands at " + trollHP);
 			if (trollHP == 0) {
 			System.out.println();
-			System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
-			System.out.println("|Congratulations! You defeated the troll!|");
-			System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
+			System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
+			System.out.println("| Congratulations! You defeated the troll! |");
+			System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
 			System.out.println("COMBAT STATS");
 			System.out.println("Highest Damage in a single hit: " +highDmg);
 			System.out.println("You hit the Troll " +hits+ " times.");
@@ -116,10 +121,10 @@ public class WizardGameApp {
 					}
 			if (trollHP < 0) {
 			System.out.println();
-			System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
-			System.out.println("|            OVERKILL!!!!                |");
-			System.out.println("|Congratulations! You defeated the troll!|");
-			System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
+			System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
+			System.out.println("|             OVERKILL!!!!                 |");
+			System.out.println("| Congratulations! You defeated the troll! |");
+			System.out.println("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
 			System.out.println("COMBAT STATS");
 			System.out.println("Highest Damage in a single hit: " +highDmg);
 			System.out.println("You hit the Troll " +hits+ " times.");
