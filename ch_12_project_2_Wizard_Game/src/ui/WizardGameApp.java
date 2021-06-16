@@ -6,6 +6,12 @@ import java.util.List;
 import com.util.Console;
 
 public class WizardGameApp {
+//	static {
+//		List<String> inventory = new ArrayList<>(4);
+//		inventory.add("Wooden Staff");
+//		inventory.add("Wizard's Hat");
+//		inventory.add("Cloth Shoes");
+//	}
 
 	public static void main(String[] args) {
 		System.out.println("*--------------------------------------*");
@@ -67,7 +73,7 @@ public class WizardGameApp {
 	}
 	
 
-	public static void displayCommands() {
+	private static void displayCommands() {
 		System.out.println();
 		System.out.println("COMMAND LIST");
 		System.out.println("inv       --- Show all items in inventory.");
@@ -144,7 +150,22 @@ public class WizardGameApp {
 			System.out.println("You find a nearby village!");
 			System.out.println("You escaped successfully!");
 				}
-
+		else if (fightCommand.equalsIgnoreCase("befriend")) {
+			System.out.println();
+			System.out.println("*~@~*~@~*~@~*~@~*~@~*~@~*~@~*");
+			System.out.println("|  You found an Easter Egg! |");
+			System.out.println("*~@~*~@~*~@~*~@~*~@~*~@~*~@~*");
+			System.out.println();
+			System.out.println("You take time to talk to the Troll and he calms down.");
+			System.out.println("He tells you that his name is Frank, and he's been very lonely.");
+			System.out.println("In a gesture of kindness, you offer him dinner. He accepts with a smile.");
+			System.out.println("A few days go by, and you part ways, knowing you've gained a lifelong friend.");
+			System.out.println("Good job.");
+			System.out.println("FRIENDSHIP GAINED!");
+		}
+		else {
+			System.out.println("Invalid command. Fleeing from the Troll!");
+		}
 	}
 }
 		
