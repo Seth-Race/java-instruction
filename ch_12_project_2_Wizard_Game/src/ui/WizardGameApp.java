@@ -46,10 +46,25 @@ public class WizardGameApp {
 			}
 
 			else if (command.equalsIgnoreCase("drop")) {
-				inventory.remove((Console.getInt("Which item? (by inventory number)   ") - 1));
-				System.out.println("You dropped it!");
+				int itemNmbr = Console.getInt("Which item? (by inventory number)   ");
+				if (itemNmbr >= 0 && itemNmbr <= inventory.size()) {
+					inventory.remove(itemNmbr);
+					System.out.println("You dropped it!");
+				} else {
+					System.out.println("Invalid entry. Returning to main.");
+					displayCommands();
+				}
+				
 			} else if (command.equalsIgnoreCase("enchant")) {
 				inventory.set(((Console.getInt("Which item number?   ") - 1)), (Console.getLine("Give it a name!   ")));
+				System.out.println();
+				System.out.println("INVENTORY");
+				System.out.println();
+
+				for (int i = 0; i < inventory.size(); i++) {
+
+					System.out.println(i + 1 + ".   " + inventory.get(i));
+				}
 			} else if (command.equalsIgnoreCase("help")) {
 				displayCommands();
 			} else if (command.equalsIgnoreCase("fight")) {
