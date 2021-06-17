@@ -69,7 +69,6 @@ public class ItemManagerApp {
 		System.out.println("Delete an Item:");
 		System.out.println("=================");
 		itemNbr = Console.getInt("Please enter number   ");
-		findItem(itemNbr);
 		Item item = findItem(itemNbr);
 		if (item != null) {
 			items.remove(itemNbr - 1);
@@ -87,7 +86,6 @@ public class ItemManagerApp {
 		System.out.println("Update an Item:");
 		System.out.println("=================");
 		itemNbr = Console.getInt("Please enter number   ");
-		findItem(itemNbr);
 		Item item = findItem(itemNbr);
 		if (item != null) {
 			item.setDescription(Console.getLine("Updated name:   "));
