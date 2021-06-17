@@ -10,7 +10,7 @@ import business.Item;
 public class ItemManagerApp {
 
 	private static List<Item> items;
-
+	private static final String ITEM_NOT_FOUND_MSG = "No item found for number: ";
 
 	public static void main(String[] args) {
 		// initialize items list and add some office items
@@ -78,7 +78,7 @@ public class ItemManagerApp {
 				System.out.println("Item number " + item + " was updated.");
 		}
 			else
-				System.out.println("Invalid entry.");
+				System.out.println(ITEM_NOT_FOUND_MSG +itemNbr);
 		}
 
 	
@@ -98,7 +98,7 @@ public class ItemManagerApp {
 			System.out.println("Item number " + itemNbr + " was updated.");
 	}
 		else
-			System.out.println("Invalid entry.");
+			System.out.println(ITEM_NOT_FOUND_MSG +itemNbr);
 	}
 	
 	private static void getItem() {
@@ -113,7 +113,7 @@ public class ItemManagerApp {
 			System.out.println(item);
 		}
 			else
-				System.out.println("Invalid entry.");
+				System.out.println(ITEM_NOT_FOUND_MSG +number);
 		}
 
 	
@@ -130,7 +130,7 @@ public class ItemManagerApp {
 
 	private static void getList() {
 		System.out.println("Items:");
-		System.out.println("=================");
+		System.out.println("=================================");
 		for (Item i : items) {
 
 			System.out.println("Item: " +i.getNumber()+ "      Description: " +i.getDescription());
