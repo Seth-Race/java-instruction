@@ -9,13 +9,11 @@ import business.Item;
 import interfaces.DAO;
 
 public class ItemTextFile implements DAO<Item> {
-	
+
 	private List<Item> items = null;
 	private Path itemsPath = null;
 	private File itemsFile = null;
 	private final String FIELD_SEP = "\t";
-	
-	
 
 	public ItemTextFile() {
 		super();
@@ -27,13 +25,13 @@ public class ItemTextFile implements DAO<Item> {
 	@Override
 	public Item get(int id) {
 		Item item = null;
-		
+
 		for (Item i : items) {
 			if (i.getId() == id) {
 				item = i;
 			}
 		}
-		
+
 		return item;
 	}
 
@@ -48,9 +46,8 @@ public class ItemTextFile implements DAO<Item> {
 		}
 		items = new ArrayList<Item>();
 		if (Files.exists(itemsPath)) {
-			try(BufferedReader in = new BufferedReader(
-								    new FileReader(itemsFile))){
-				//read items from file into arraylist
+			try (BufferedReader in = new BufferedReader(new FileReader(itemsFile))) {
+				// read items from file into arraylist
 				String line = in.readLine();
 				while (line != null) {
 					String[] fields = line.split(FIELD_SEP);
@@ -61,14 +58,12 @@ public class ItemTextFile implements DAO<Item> {
 					items.add(item);
 					line = in.readLine();
 				}
-			}
-			catch (IOException ioe) {
+			} catch (IOException ioe) {
 				ioe.printStackTrace();
 				return null;
 			}
-		}
-		else {
-			System.out.println(itemsPath.toAbsolutePath()+ " does not exist.");
+		} else {
+			System.out.println(itemsPath.toAbsolutePath() + " does not exist.");
 			try {
 				Files.createFile(itemsPath);
 				System.out.println("Empty File created.");
@@ -78,7 +73,7 @@ public class ItemTextFile implements DAO<Item> {
 			}
 		}
 		return items;
-		
+
 	}
 
 	@Override
@@ -95,7 +90,7 @@ public class ItemTextFile implements DAO<Item> {
 		int idx = items.indexOf(oldItem);
 //		items.remove(idx);
 //		items.add(idx, item);
-		items.set(idx,  item);
+		items.set(idx, item);
 		return saveAll();
 	}
 
@@ -104,28 +99,28 @@ public class ItemTextFile implements DAO<Item> {
 		items.remove(item);
 		return saveAll();
 	}
+	
+	public boolean clearItems() {
+		items.clear();
+		return saveAll();
+	}
 
 	/*
 	 * Overwrite items file with all items in items list.
 	 */
 	private boolean saveAll() {
 		boolean success = false;
-		try (PrintWriter out = new PrintWriter(
-							   new BufferedWriter(
-							   new FileWriter(itemsFile)))){
+		try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(itemsFile)))) {
 			for (Item item : items) {
-				out.println(item.getId() +FIELD_SEP);
-				out.println(item.getDescription() +FIELD_SEP);
+				out.print(item.getId() + FIELD_SEP);
+				out.print(item.getDescription() + FIELD_SEP);
 			}
 			success = true;
-		}
-		catch (IOException ioe) {
+		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
-		
-		
+
 		return success;
 	}
-	
-	
+
 }

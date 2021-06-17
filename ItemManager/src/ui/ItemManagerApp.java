@@ -89,6 +89,12 @@ public class ItemManagerApp {
 			else {
 				System.out.println(ITEM_NOT_FOUND +id);
 			}
+		case 6:
+			System.out.println("Clearing File");
+			System.out.println("=============");
+			itemsDAO.clearItems();
+			System.out.println("Cleared File successfully");
+			System.out.println();
 			
 			break;
 		case 9:
@@ -118,6 +124,7 @@ public class ItemManagerApp {
 			System.out.println("3 - Add new item");
 			System.out.println("4 - Update an item");
 			System.out.println("5 - Delete an item");
+			System.out.println("6 - Clear entire file");
 			System.out.println("9 - Exit");
 			System.out.println();
 		}
