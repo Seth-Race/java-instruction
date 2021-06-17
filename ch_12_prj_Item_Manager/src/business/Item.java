@@ -33,7 +33,7 @@ public class Item implements Comparable{
 
 	@Override
 	public String toString() {
-		return "Item [number=" + number + ", description=" + description + "]";
+		return "[Number: " + number + "   |    Description: " + description + "]";
 	}
 
 	@Override
