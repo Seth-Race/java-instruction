@@ -73,9 +73,15 @@ public class ItemManagerApp {
 		itemNbr = Console.getInt("Please enter number   ");
 		findItem(itemNbr);
 		Item item = findItem(itemNbr);
-		 items.remove(itemNbr-1);
-			System.out.println("Item number " + item + " was updated.");
-	}
+		if (item != null) {
+			 items.remove(itemNbr-1);
+				System.out.println("Item number " + item + " was updated.");
+		}
+			else
+				System.out.println("Invalid entry.");
+		}
+
+	
 	
 	private static void editItem(int itemNbr) {
 		// - if item not found, print message
@@ -87,10 +93,13 @@ public class ItemManagerApp {
 		itemNbr = Console.getInt("Please enter number   ");
 		findItem(itemNbr);
 		Item item = findItem(itemNbr);
+		if (item != null) {
 		 item.setDescription(Console.getLine("Updated name:   "));
 			System.out.println("Item number " + itemNbr + " was updated.");
 	}
-
+		else
+			System.out.println("Invalid entry.");
+	}
 	
 	private static void getItem() {
 		// get an item by id
@@ -100,9 +109,14 @@ public class ItemManagerApp {
 		System.out.println("=================");
 		int number = Console.getInt("Please enter number   ");
 		Item item = findItem(number);
-		System.out.println(item);
+		if (item != null) {
+			System.out.println(item);
+		}
+			else
+				System.out.println("Invalid entry.");
+		}
 
-	}
+	
 
 	private static void addItem() {
 		int itemNbr;
@@ -133,10 +147,6 @@ public class ItemManagerApp {
 			if (itemNbr == item.getNumber()) {
 				foundItem = item;
 			}
-		}
-		if (foundItem == null){
-			System.out.println("Invalid entry. Try again.");
-			
 		}
 		return foundItem;
 	}
