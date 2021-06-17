@@ -152,11 +152,5 @@ public class ItemManagerApp {
 		System.out.println("9 - Exit");
 		System.out.println();
 	}
-	private static boolean validateItemNumber(int itemNbr) {
-		boolean found = false;
-		if (itemNbr > 0 && itemNbr <= items.size()) {
-			found = true;
-		}
-		return found;
-	}
+
 }
