@@ -41,6 +41,7 @@ public class MovieManagerApp {
 			if (movie != null) {
 				System.out.println("Movie found!");
 				System.out.println(movie);
+				System.out.println();
 			}
 			else {
 				System.out.println(MOVIE_NOT_FOUND +id);
@@ -65,6 +66,7 @@ public class MovieManagerApp {
 			break;
 		case 4:
 			//update a movie - Not implemented yet.
+			//calls a new method with switch statements to select what to update
 			break;
 		case 5:
 			//delete a movie
