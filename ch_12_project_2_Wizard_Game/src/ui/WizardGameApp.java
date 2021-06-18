@@ -106,9 +106,9 @@ public class WizardGameApp {
 		System.out.println("COMMAND LIST");
 		System.out.println("inv       --- Show all items in inventory.");
 		System.out.println("fight     --- Fight a Troll!");
-		System.out.println("grab   	  --- Grab a random item!");
+		System.out.println("grab   	  --- Grab a specific item!");
 		System.out.println("enchant   --- Make an item better!");
-		System.out.println("drop      --- Drop a random item!");
+		System.out.println("drop      --- Drop a specific item!");
 		System.out.println("quit   	  --- Exit the world.");
 		System.out.println("help      --- Show this list of commands again.");
 		System.out.println();
