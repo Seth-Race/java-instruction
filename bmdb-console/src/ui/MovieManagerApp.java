@@ -14,7 +14,7 @@ public class MovieManagerApp {
 		System.out.println();
 		
 		//creating instance of MovieTextFile. Should create if it doesn't already exist.
-		DAO<Movie> MoviesDAO = MovieTextFile();
+		DAO<Movie> MoviesDAO = new MovieTextFile();
 		
 		int command = 0;
 	while (command !=9) {
@@ -30,6 +30,7 @@ public class MovieManagerApp {
 			for (Movie movie : MoviesDAO.getAll()) {
 				System.out.println(movie);
 			}
+			System.out.println();
 			break;
 		case 2:
 			//get movie by ID
