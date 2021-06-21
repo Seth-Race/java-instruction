@@ -137,7 +137,7 @@ public class MovieManagerApp {
 		System.out.println("4 - Update an actor");
 		System.out.println("5 - Delete an actor");
 		System.out.println("6 - Clear entire file");
-		System.out.println("9 - Exit");
+		System.out.println("9 - Return to Movie");
 		System.out.println();
 	}
 	
@@ -208,8 +208,13 @@ public class MovieManagerApp {
 					System.out.println(ACTOR_NOT_FOUND +id);
 				}
 				break;
-				// CONTINUE FROM HERE 06-21-21
+				
+				//clear entire file
 			case 6:
+				System.out.println("Clearing Actor File");
+				System.out.println("===================");
+				ActorsDAO.clearMovies();
+				System.out.println();
 				break;
 			case 9:
 				break;

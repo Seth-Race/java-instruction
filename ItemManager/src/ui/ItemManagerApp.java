@@ -3,6 +3,7 @@ package ui;
 import com.util.Console;
 
 import business.Item;
+import db.ItemDB;
 import interfaces.DAO;
 import text.ItemTextFile;
 
@@ -14,7 +15,7 @@ public class ItemManagerApp {
 		System.out.println();
 		
 		//creating instance of ItemTextFile - should create file if doesn't exist on first run.
-		DAO<Item> itemsDAO = new ItemTextFile();
+		DAO<Item> itemsDAO = new ItemDB();
 		
 		
 		int command = 0;
@@ -28,6 +29,7 @@ public class ItemManagerApp {
 			//get all
 			System.out.println("Get all Items");
 			System.out.println("=============");
+			System.out.println();
 			for (Item item: itemsDAO.getAll()) {
 				System.out.println(item);
 			}
@@ -36,13 +38,17 @@ public class ItemManagerApp {
 			//get item by ID
 			System.out.println("Get Item by ID");
 			System.out.println("==============");
+			System.out.println();
 			int id = Console.getInt("ID:   ");
 			Item item = itemsDAO.get(id);
+			System.out.println();
 			if (item != null) {
 				System.out.println("Item found: " +item);
+				System.out.println();
 			}
 			else {
 				System.out.println(ITEM_NOT_FOUND +id);
+				System.out.println();
 			}
 			break;
 		case 3:
@@ -117,6 +123,7 @@ public class ItemManagerApp {
 	}
 	
 	private static void displayMenu() {
+			System.out.println();
 			System.out.println("COMMAND MENU:");
 			System.out.println("==================");
 			System.out.println("1 - List all items");
