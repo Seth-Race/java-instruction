@@ -6,6 +6,7 @@ import com.util.Console;
 
 import business.Actor;
 import business.Movie;
+import db.MovieDB;
 import interfaces.DAO;
 import text.ActorTextFile;
 import text.MovieTextFile;
@@ -19,7 +20,7 @@ public class MovieManagerApp {
 		System.out.println();
 		
 		//creating instance of MovieTextFile. Should create if it doesn't already exist.
-		DAO<Movie> MoviesDAO = new MovieTextFile();
+		DAO<Movie> MoviesDAO = new MovieDB();
 		
 		int command = 0;
 	while (command !=9) {
@@ -56,12 +57,12 @@ public class MovieManagerApp {
 			//adding movie
 			System.out.println("Adding a Movie");
 			System.out.println("==============");
-			id = Console.getInt("ID:   ");
+			//id = Console.getInt("ID:   ");
 			String title = Console.getLine("Title:   ");
 			int year = Console.getInt("Year:   ");
 			String rating = Console.getLine("Rating:   ");
 			String director = Console.getLine("Director:   ");
-			if (MoviesDAO.add(new Movie(id, title, year, rating, director))) {
+			if (MoviesDAO.add(new Movie(title, year, rating, director))) {
 				System.out.println("Movie Added.");
 				System.out.println();
 			}

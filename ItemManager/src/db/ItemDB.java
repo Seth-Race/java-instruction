@@ -20,8 +20,11 @@ public class ItemDB implements DAO<Item> {
 	@Override
 	public Item get(int id) {
 		Item item = null;
-		try (Statement stmt = getConnection().createStatement()) {
-			ResultSet rs = stmt.executeQuery("Select * from item where id = " + id);
+		//prepared statement helps defend from SQL injection attacks.
+		String sql = "Select * from item where id = ?";
+		try (PreparedStatement stmt = getConnection().prepareStatement(sql)) {
+			stmt.setInt(1, id);
+			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 				item = getItemFromRow(rs);
 			}
@@ -48,6 +51,63 @@ public class ItemDB implements DAO<Item> {
 
 	}
 
+
+
+	@Override
+	public boolean add(Item item) {
+		boolean success = false;
+		String sql = "insert into item (description) values (?)";
+		try (PreparedStatement stmt = getConnection().prepareStatement(sql)) {
+			stmt.setString(1, item.getDescription());
+			int rowsAffected = stmt.executeUpdate();
+			if (rowsAffected == 1) {
+				success = true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return success;
+	}
+
+	@Override
+	public boolean update(Item item) {
+		boolean success = false;
+		String sql = "update item set description = ? where id = ?";
+		try (PreparedStatement stmt = getConnection().prepareStatement(sql)) {
+			stmt.setString(1, item.getDescription());
+			stmt.setInt(2, item.getId());
+			int rowsAffected = stmt.executeUpdate();
+			if (rowsAffected == 1) {
+				success = true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return success;
+	}
+
+	@Override
+	public boolean delete(Item item) {
+		boolean success = false;
+		String sql = "delete from item where id = ?";
+		try (PreparedStatement stmt = getConnection().prepareStatement(sql)) {
+			stmt.setInt(1, item.getId());
+			int rowsAffected = stmt.executeUpdate();
+			if (rowsAffected == 1) {
+				success = true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return success;
+	}
+
+	@Override
+	public boolean clearItems() {
+		boolean success = false;
+		return success;
+	}
+
 	private Item getItemFromRow(ResultSet rs) throws SQLException {
 		// For each row, parse an item
 		int id = rs.getInt(1);
@@ -55,29 +115,5 @@ public class ItemDB implements DAO<Item> {
 		Item item = new Item(id, desc);
 		return item;
 	}
-
-	@Override
-	public boolean add(Item t) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean update(Item t) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean delete(Item t) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean clearItems() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
+	
 }

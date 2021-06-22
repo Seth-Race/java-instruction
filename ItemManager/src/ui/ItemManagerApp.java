@@ -55,9 +55,10 @@ public class ItemManagerApp {
 			//add item
 			System.out.println("Add an Item");
 			System.out.println("===========");
-			id = Console.getInt("ID:  ");
+			//with a database, we no longer want to set ID.
+			//id = Console.getInt("ID:  ");
 			String desc = Console.getLine("Description:   ");
-			if (itemsDAO.add(new Item(id, desc))) {
+			if (itemsDAO.add(new Item(desc))) {
 				System.out.println("Item added");
 				System.out.println();
 			}
@@ -95,6 +96,7 @@ public class ItemManagerApp {
 			else {
 				System.out.println(ITEM_NOT_FOUND +id);
 			}
+			break;
 		case 6:
 			System.out.println("Clearing File");
 			System.out.println("=============");
