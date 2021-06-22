@@ -103,7 +103,7 @@ public class ActorTextFile implements DAO<Actor> {
 	}
 
 	@Override
-	public boolean clearMovies() {
+	public boolean clear() {
 		actors.clear();
 		return saveAll();
 	}

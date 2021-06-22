@@ -104,7 +104,7 @@ public class MovieTextFile implements DAO<Movie> {
 	}
 
 	@Override
-	public boolean clearMovies() {
+	public boolean clear() {
 		movies.clear();
 		return saveAll();
 	}

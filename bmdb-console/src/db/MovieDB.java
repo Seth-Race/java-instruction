@@ -4,18 +4,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import business.Movie;
 import interfaces.DAO;
 
-public class MovieDB implements DAO<Movie> {
+public class MovieDB extends BaseDB implements DAO<Movie> {
 
-	private Connection getConnection() throws SQLException {
-		String dbUrl = "jdbc:mysql://localhost:3306/bmdb";
-		String username = "bmdb_user";
-		String pwd = "sesame";
-		Connection conn = DriverManager.getConnection(dbUrl, username, pwd);
-		return conn;
-	}
+
 
 	@Override
 	public Movie get(int id) {
@@ -33,6 +28,10 @@ public class MovieDB implements DAO<Movie> {
 
 		return movie;
 	}
+	
+
+
+
 
 	@Override
 	public List<Movie> getAll() {
@@ -91,7 +90,7 @@ public class MovieDB implements DAO<Movie> {
 	}
 
 	@Override
-	public boolean clearMovies() {
+	public boolean clear() {
 		boolean success = false;
 		return success;
 	}
@@ -107,4 +106,5 @@ public class MovieDB implements DAO<Movie> {
 		return movie;
 	}
 
+	
 }

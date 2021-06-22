@@ -24,6 +24,11 @@ public class Movie {
 			this.director = director;
 		}
 
+		public Movie(String title2, int year2, String rating2, String director2, Credit credit, Actor actor,
+				String role) {
+			// TODO Auto-generated constructor stub
+		}
+
 		public int getId() {
 			return id;
 		}
@@ -66,10 +71,10 @@ public class Movie {
 
 		@Override
 		public String toString() {
-			return "ID:"+ id + " | Title:" + title + " | Year:" + year + " | Rating:" + rating + " | Director:"
+			return "ID: "+ id + " | Title: " + title + " | Year: " + year + " | Rating: " + rating + " | Director: "
 					+ director;
 		}
-		
+
 		
 	}
 

@@ -22,6 +22,22 @@ public class Actor {
 
 
 	
+	public Actor(String firstName, String lastName, String gender, LocalDate birthDate) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.birthDate = birthDate;
+	}
+
+
+
+	public Actor() {
+		super();
+	}
+
+
+
 	public int getId() {
 		return id;
 	}
@@ -75,9 +91,11 @@ public class Actor {
 
 	@Override
 	public String toString() {
-		return "Actor ID:" + id  +" Name: "+ firstName +" "+ lastName +" Gender: "+ gender +" Birthdate: " + birthDate;
+		return "Actor ID:" + id  +"\t Name: "+ firstName +" "+ lastName +" Gender: "+ gender +" Birthdate: " + birthDate;
 	}
 	
-	
+	public String getName() {
+		return firstName+ " " +lastName;
+	}
 	
 }
