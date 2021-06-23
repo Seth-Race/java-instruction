@@ -9,13 +9,13 @@ public class User {
 	private String firstName;
 	private String email;
 	private String phone;
-	private int reviewer;
-	private int admin;
+	private boolean reviewer;
+	private boolean admin;
 	
 	
 	
 	public User(int id, String username, String password, String lastName, String firstName, String email,
-			String phone, int reviewer, int admin) {
+			String phone, boolean reviewer, boolean admin) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -36,7 +36,7 @@ public class User {
 	
 	
 	public User(String username, String password, String lastName, String firstName, String email, String phone,
-			int reviewer, int admin) {
+			boolean reviewer, boolean admin) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -89,16 +89,16 @@ public class User {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public int getReviewer() {
+	public boolean getReviewer() {
 		return reviewer;
 	}
-	public void setReviewer(int reviewer) {
+	public void setReviewer(boolean reviewer) {
 		this.reviewer = reviewer;
 	}
-	public int getAdmin() {
+	public boolean getAdmin() {
 		return admin;
 	}
-	public void setAdmin(int admin) {
+	public void setAdmin(boolean admin) {
 		this.admin = admin;
 	}
 	@Override
