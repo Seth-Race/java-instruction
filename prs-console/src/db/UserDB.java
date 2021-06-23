@@ -53,8 +53,8 @@ public class UserDB extends BaseDB implements DAO<User>{
 			stmt.setString(5, u.getEmail());
 			stmt.setString(6, u.getPhone());
 			stmt.setString(7, u.getPhone());
-			stmt.setInt(8, u.getReviewer());
-			stmt.setInt(9, u.getAdmin());
+			stmt.setBoolean(8, u.getReviewer());
+			stmt.setBoolean(9, u.getAdmin());
 			int rowsAffected = stmt.executeUpdate();
 			if (rowsAffected == 1) {
 				success = true;
@@ -96,15 +96,17 @@ public class UserDB extends BaseDB implements DAO<User>{
 	
 	private User getUserFromRow(ResultSet rs) throws SQLException {
 		// For each row, parse an item
-		int id = rs.getInt(1);
-		String userName = rs.getString(2);
+		//getting ID and username by column name. rest by column number (p. 681)
+		//normally you'd never mix styles.
+		int id = rs.getInt("ID");
+		String userName = rs.getString("Username");
 		String password = rs.getString(3);
 		String lastName = rs.getString(4);
 		String firstName = rs.getString(5);
 		String email = rs.getString(6);
 		String phone = rs.getString(7);
-		int reviewer = rs.getInt(8);
-		int admin = rs.getInt(9);
+		boolean reviewer = rs.getBoolean(8);
+		boolean admin = rs.getBoolean(9);
 		User user = new User(id, userName, password, lastName, firstName, email, phone, reviewer, admin);
 		return user;
 	}
