@@ -1,0 +1,116 @@
+package business;
+
+public class User {
+
+	private int id;
+	private String username;
+	private String password;
+	private String lastName;
+	private String firstName;
+	private String email;
+	private String phone;
+	private int reviewer;
+	private int admin;
+	
+	
+	
+	public User(int id, String username, String password, String lastName, String firstName, String email,
+			String phone, int reviewer, int admin) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.email = email;
+		this.phone = phone;
+		this.reviewer = reviewer;
+		this.admin = admin;
+	}
+	public User() {
+		super();
+	}
+	
+	
+	
+	
+	
+	public User(String username, String password, String lastName, String firstName, String email, String phone,
+			int reviewer, int admin) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.email = email;
+		this.phone = phone;
+		this.reviewer = reviewer;
+		this.admin = admin;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public int getReviewer() {
+		return reviewer;
+	}
+	public void setReviewer(int reviewer) {
+		this.reviewer = reviewer;
+	}
+	public int getAdmin() {
+		return admin;
+	}
+	public void setAdmin(int admin) {
+		this.admin = admin;
+	}
+	@Override
+	public String toString() {
+		return "ID: " + id + " Username: " + username + " Password: " + password + " Name: " +getName()+ "\nEmail: " + email + " Phone: " + phone + " Reviewer: "
+				+ reviewer + " Admin: " + admin + "\n-------------------------------------------------------------------------";
+	}
+	
+	
+	
+	public String getName() {
+		return firstName+ " " +lastName;
+	}
+	
+}
