@@ -127,5 +127,9 @@ public class Console {
     	return resp.equalsIgnoreCase("y") ? true : false;    	
     }
 
+    
+    public static void println(String words) {
+    	System.out.println(words);
+    }
 
 }

@@ -60,8 +60,8 @@ public class PRSManagerApp {
 				String lastName = Console.getString("Last Name:   ");
 				String phone = Console.getString("Phone Number (XXX-XXX-XXXX):   ");
 				String email = Console.getString("Email:   ");
-				boolean reviewer = Console.getBoolean("Reviewer? y/n   ");				
-				boolean admin = Console.getBoolean("Admin? y/n   ");
+				boolean reviewer = Console.getBoolean("Reviewer? y/n:   ");				
+				boolean admin = Console.getBoolean("Admin? y/n:   ");
 				if (UsersDAO.add(new User(username, password, firstName, lastName, phone, email, reviewer, admin))) {
 					System.out.println("User Added.");
 					System.out.println();
